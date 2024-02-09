@@ -10,15 +10,22 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 //habilitar cors
-builder.Services.AddCors(options=>{
-    options.AddPolicy("Politica", app =>
-    {
-        app.AllowAnyOrigin()
-        //.AllowHeader()
-        .AllowAnyMethod();
+//builder.Services.AddCors(options=>{
+//    options.AddPolicy("Politica", app =>
+//    {
+//        app.AllowAnyOrigin()
+//        .AllowHeader()
+//        .AllowAnyMethod();
+//    });
+//});
+
+builder.Services.AddCors(options => {
+    options.AddPolicy("Politica", builder => {
+        builder.AllowAnyOrigin()
+               .AllowAnyHeader()  // Aquí está el método corregido
+               .AllowAnyMethod();
     });
 });
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

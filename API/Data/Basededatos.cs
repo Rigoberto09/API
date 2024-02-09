@@ -8,7 +8,7 @@ namespace API.Data
         string datosConexion = "Data Source=DESKTOP-KRV18GC\\SQLEXPRESS;initial Catalog=master; Integrated Security=True";
         //string datosConexion = "Data Source=DESKTOP-KRV18GC\\SQLEXPRESS;Initial Catalog=master;Integrated Security=True;Encrypt=True;";
 
-        public SqlConnection conexion = new SqlConnection();
+        public SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-KRV18GC\\SQLEXPRESS;initial Catalog=master; Integrated Security=True;");
 
         public Basededatos()
         {
